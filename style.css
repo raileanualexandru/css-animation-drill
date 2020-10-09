@@ -1,94 +1,234 @@
+/*navbar */
 
-#stage{
-    position:relative;
-    width:600px;
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    margin-left: 150px;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+/*css-animation-drill*/
+
+#stage {
+    position: relative;
+    width: 600px;
     height: 600px;
     background-color: rgb(243, 237, 237);
-    margin:30px auto 50px auto;
-    
+    margin: 30px auto 50px auto;
 }
-.dashed{
+
+.dashed {
     position: absolute;
-    width:590px;
+    width: 590px;
     height: 590px;
-    margin:5px;
+    margin: 5px;
     border: 1px dashed gray;
     float: left;
-    
 }
-#hero{
-    position:relative;
+
+#hero {
+    position: relative;
     width: 75px;
     height: 75px;
-    margin-top:10px;
-    margin-left:10px;
-    border:1px dashed red;
-    animation: 5s moveForward 0s forwards, 2s moveDown 5s forwards, 0.5s moveMiddle 7s forwards,
-    2s stayMiddle 7.5s forwards, 2.5s moveLeft 9.5s forwards, 5s moveCorner 12s forwards;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px dashed red;
+    animation: 5s moveForward 0s forwards, 2s moveDown 5s forwards, 0.5s moveMiddle 7s forwards, 2s stayMiddle 7.5s forwards, 2.5s moveLeft 9.5s forwards, 5s moveCorner 12s forwards;
     animation-timing-function: linear;
-    animation-iteration-count:1;
-       
+    animation-iteration-count: 1;
 }
-@keyframes moveForward{
-    from {
-        left:0px;
-    }
-    to{
-        left:495px;
-    }  
-  }
-  @keyframes moveDown{
-      from{
-         top:0px;
-      }
-      to{
-        top:220px;
-      }
-  }
-  @keyframes moveMiddle{
-      from{
-          left:495px;
-          transform: rotate(0deg);
-      }
-      to{
-        left:257px;
-        transform: rotate(45deg);
-      }
-  }
-  @keyframes stayMiddle{
-      from{
-        left:257px;
-        transform: rotate(45deg);
-      }
-      to{
-        left:257px;
-        transform: rotate(45deg);
-      }
-  }
-  @keyframes moveLeft{
-      from{
-        left:257px;
-      }
-      to{
-          left:0px;
-          transform: rotate(0deg);
-          border:1px dashed #0900BD;
-      }
-  }
-  @keyframes moveCorner{
-      from{
-        left:0px;
-        border:1px dashed #0900BD;
-      }
-      to{
-          top:425px;
-          left:425px;
-          width:150px;
-          height:150px;
-          border-radius:50%;
-          background:radial-gradient(#F76B1C,#FBDA61);
-          border:none;
-      }
-  }
 
-  
+@keyframes moveForward {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 495px;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 220px;
+    }
+}
+
+@keyframes moveMiddle {
+    from {
+        left: 495px;
+        transform: rotate(0deg);
+    }
+    to {
+        left: 257px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes stayMiddle {
+    from {
+        left: 257px;
+        transform: rotate(45deg);
+    }
+    to {
+        left: 257px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        left: 257px;
+    }
+    to {
+        left: 0px;
+        transform: rotate(0deg);
+        border: 1px dashed #0900BD;
+    }
+}
+
+@keyframes moveCorner {
+    from {
+        left: 0px;
+        border: 1px dashed #0900BD;
+    }
+    to {
+        top: 425px;
+        left: 425px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: radial-gradient(#F76B1C, #FBDA61);
+        border: none;
+    }
+}
+
+/*animation.html settings */
+
+.container {
+    width: 800px;
+    height: 600px;
+    margin: 30px auto 50px auto;
+    border: 1px solid gray;
+    background-image: url("images/space.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aliens {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-image: url("images/rsz_aliens.png");
+    animation: 1s mr 0s forwards, 1s mr2 1s forwards, 0.5s mr3 2s forwards, 1s mr4 2.5s forwards, 1s mr5 3.5s forwards, 0.5s mr6 4.5s forwards, 1s mr7 5s forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes mr {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 100px;
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes mr2 {
+    from {
+        top: 0px;
+        left: 100px;
+        transform: rotate(30deg)
+    }
+    to {
+        transform: rotate(15deg);
+        top: 50px;
+        left: 200px;
+    }
+}
+
+@keyframes mr3 {
+    from {
+        transform: rotate(10deg);
+        top: 50px;
+        left: 200px;
+    }
+    to {
+        transform: rotate(0deg);
+        top: 100px;
+        left: 350px;
+    }
+}
+
+@keyframes mr4 {
+    from {
+        transform: rotate(0deg);
+        top: 100px;
+        left: 350px;
+    }
+    to {
+        transform: rotate(-15deg);
+        top: 20px;
+        left: 700px;
+    }
+}
+
+@keyframes mr5 {
+    from {
+        transform: rotate(-15deg);
+        top: 20px;
+        left: 700px;
+    }
+    to {
+        transform: rotate(-30deg);
+        top: 300px;
+        left: 150px;
+    }
+}
+
+@keyframes mr6 {
+    from {
+        transform: rotate(-30deg);
+        top: 300px;
+        left: 150px;
+    }
+    to {
+        transform: rotate(-15deg);
+        top: 500px;
+        left: 700px;
+    }
+}
+
+@keyframes mr7 {
+    from {
+        transform: rotate(-15deg);
+        top: 500px;
+        left: 700px;
+    }
+    to {
+        transform: rotate(0deg);
+        top: 0px;
+        left: 0px;
+    }
+}
